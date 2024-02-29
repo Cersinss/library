@@ -1,4 +1,3 @@
-// Создание структуры данных книги
 function Book(title, author, year, genre, pages) {
     this.title = title;
     this.author = author;
@@ -7,27 +6,22 @@ function Book(title, author, year, genre, pages) {
     this.pages = pages;
   }
   
-  // Добавление книги в библиотеку
   function addBook(title, author, year, genre, pages) {
     library.push(new Book(title, author, year, genre, pages));
   }
   
-  // Удаление книги из библиотеки
   function removeBook(title) {
     library = library.filter(book => book.title !== title);
   }
   
-  // Поиск книг по автору
   function findBooksByAuthor(author) {
     return library.filter(book => book.author === author);
   }
   
-  // Фильтрация книг по жанру
   function filterBooksByGenre(genre) {
     return library.filter(book => book.genre === genre);
   }
   
-  // Генерация отчета о количестве книг каждого жанра
   function genreReport() {
     let genreCount = {};
     library.forEach(book => {
@@ -40,7 +34,6 @@ function Book(title, author, year, genre, pages) {
     return genreCount;
   }
   
-  // Генерация отчета о среднем количестве страниц
   function averagePagesReport() {
     let totalPages = 0;
     library.forEach(book => {
@@ -49,12 +42,10 @@ function Book(title, author, year, genre, pages) {
     return totalPages / library.length;
   }
   
-  // Сортировка книг по году издания
   function sortBooksByYear() {
     return library.sort((a, b) => a.year - b.year);
   }
   
-  // Инициализация библиотеки
   let library = [];
   
   // Добавление книг в библиотеку
